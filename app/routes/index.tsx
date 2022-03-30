@@ -17,7 +17,7 @@ const validateEmail = (email: string) => {
 export async function action({ request }) {
   const data = await request.formData();
   const email = data.get("email");
-  const leadText = "startup.dev: " + email;
+  const leadText = "0xMidnight: " + email;
 
   let formMessage = {
     email: validateEmail(email),
