@@ -26,7 +26,7 @@ export const meta: MetaFunction = () => ({
   title: title,
   viewport: "width=device-width,initial-scale=1",
   description: description,
-  "og:title": "Security for startups who've built something awesome",
+  "og:title": "Security for startups who've built something awesome.",
   "og:description": description,
   "og:image": "https://startup.security/images/ssec_meta.png",
   "og:url": "https://startup.security",
