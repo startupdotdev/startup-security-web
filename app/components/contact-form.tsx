@@ -1,4 +1,4 @@
-import { Form } from "remix";
+import { Form } from "@remix-run/react";
 import Footer from "./footer";
 import Slide from "./slide";
 

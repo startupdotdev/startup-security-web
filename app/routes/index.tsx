@@ -4,25 +4,12 @@ import ContactForm from "~/components/contact-form";
 import submitContactUs from "~/lib/submit-contact-us";
 
 import { type ActionFunction } from "@remix-run/node";
-import {
-  Form,
-  useActionData,
-  useLocation,
-  useTransition,
-} from "@remix-run/react";
+import { useActionData, useLocation, useTransition } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import clsx from "clsx";
 
 import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
-
-const SUCCESS_MESSAGE = "Thanks, We'll Reply Soon";
-
-const validateEmail = (email: string) => {
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return "Valid Email Please";
-  }
-};
 
 const trustedBys: string[] = [
   "/images/semi-trusted/logo-google1.png",
@@ -76,13 +63,6 @@ export default function Index() {
   let [visitorId, setVisitorId] = useState<string>();
 
   const message: string = useActionData() as string;
-
-  useEffect(() => {
-    if (data?.formMessage?.email === SUCCESS_MESSAGE && !hasSubmitted) {
-      setHasSubmitted(true);
-      toast.success("Email submitted!", { position: "bottom-center" });
-    }
-  }, [data?.formMessage?.email, hasSubmitted]);
 
   useEffect(() => {
     const fpPromise = FingerprintJS.load({
