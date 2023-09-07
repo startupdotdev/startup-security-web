@@ -6,8 +6,6 @@ import submitContactUs from "~/lib/submit-contact-us";
 import { type ActionFunction } from "@remix-run/node";
 import { useActionData, useLocation, useTransition } from "@remix-run/react";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-import clsx from "clsx";
 
 import FingerprintJS from "@fingerprintjs/fingerprintjs-pro";
 
